@@ -1,0 +1,11 @@
+1. 把view.py 拉入 spyder
+
+2. 建立 shop 函式
+
+3. 把mysite裡的urls.py 拉入spyder
+
+4. from shop.views import shop 
+
+5. urlpatterns裡新增  path('shop/', shop) 與shop函式呼應
+
+6. 開啟新頁 另存在mysite的templates裡 副黨選allfile 檔名為 shop.html(跟函式裡的一樣) 就可用localhost導到shop

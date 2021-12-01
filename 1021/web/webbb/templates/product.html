@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="/static/css/index.css">
+        <title>Yahoo Product List</title>
+    </head>
+<body>
+    <div id='banner'>
+
+    </div>
+    <div id='formarea'>
+        <form action="" method="get">
+            product_name:<input type="text" name="product" /><p></p><!--product name-->
+            product_price:<input type="number" name="startp" /> ~ <input type="number" name="endp" /><p></p><!--price range-->
+            <input type="submit" value="search" />
+
+        </form>
+    </div>
+    <div class='info'>
+        {% for p in product_list %}
+        <div class='infoarea'>
+            <ul>
+                <li>store: {{p.shop}}</li>
+                <li>product: {{p.name}}</li>
+                <li>price: {{p.price}}</li>
+                <li><a href="{{p.link}}"><img src="{{p.photo_url}}"></a></li>
+            </ul>
+        </div>
+        {% endfor %}
+        <div class="pagination">
+            <span class="page_link">
+                {% if product_list.has_previous %}
+                    <a href="?page={{product_list.previous_page_number}}">previous</a>
+                {% endif %}
+                <span class="current">
+                    pages:{{product_list.number}} of {{product_list.paginator.num_pages}}
+                </span>
+                {% if product_list.has_next %}
+                    <a href="?page={{product_list.next_page_number}}">next</a>
+                {% endif %}
+            </span>
+        
+        </div>
+    </div>
+</body>
+</html>

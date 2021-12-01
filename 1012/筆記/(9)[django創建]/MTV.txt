@@ -1,0 +1,5 @@
+
+
+     Modal (資料庫或資料表主體)
+MTV  Template (網頁資料)
+     View  (前後端結合呈現)

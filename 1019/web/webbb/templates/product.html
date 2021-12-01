@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="/static/css/index.css">
+        <title>Yahoo Product List</title>
+    </head>
+<body>
+    <div class='info'>
+        {% for p in product_list %}
+        <div class='infoarea'>
+            <ul>
+                <li>store: {{p.shop}}</li>
+                <li>product: {{p.name}}</li>
+                <li>price: {{p.price}}</li>
+                <li><a href="{{p.link}}"><img src="{{p.photo_url}}"></a></li>
+            </ul>
+        </div>
+    {% endfor %}
+    </div>
+</body>
+</html>

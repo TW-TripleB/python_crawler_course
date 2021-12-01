@@ -1,0 +1,87 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="/static/css/message.css" />
+		<link rel="stylesheet" href="/static/css/index.css" />
+		<script>
+			function isSend(){
+				if(confirm("ready to submmit?")==true){
+					return true;
+				}else{
+					return false;
+				}
+			}
+		</script>
+    </head>
+    <body>
+		{% include "banner.html" %}
+        <div id="wrapper">
+            <div id="content">   
+				<div id="container">
+
+					<form id="form1" action="" method="post" onSubmit="return isSend()"> <!--onSubmit提交時的確認視窗-->
+						{% csrf_token %} <!--django裡要POST資料必須要用的-->
+						<div class="main">
+							<div class='msg'>
+								<p>Question Inquiry</p>
+							</div>
+
+							<div class="title">
+								<span class="word">Subject</span>
+								<div class="field-box">
+									<input type="text" name="title" required class="field">
+								</div>
+							</div>
+
+
+
+							<div class="title">
+								<span class="word">Name</span>
+								<div class="field-box">
+									<input type="text" name="username" required class="field">
+								</div>
+							</div>
+
+
+							<div class="title">
+								<span class="word">Email</span>
+								<div class="field-box">
+									<input type="text" name="email" required class="field">
+								</div>
+							</div>
+
+
+
+							<div class="title">
+								<span class="word">Content</span>
+								<div class="field-box">
+
+									<textarea name="content" rows="10" required class="field"></textarea>
+									
+
+								</div>
+							</div>
+
+							<div class="send">
+
+								<input type="submit" value="send" />
+
+							</div>
+			
+			
+			
+			
+			
+			
+			
+			</form>
+    
+		</div>
+	</div>
+	{% include "footer.html" %}
+
+    
+    
+    
+    </body>
+</html>

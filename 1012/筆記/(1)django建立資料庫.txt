@@ -1,0 +1,29 @@
+1.setting裡 $77 database裡新增 
+
+'default': {
+        'ENGINE': 'django.db.backends.mysql',  #要改成mysql
+        'NAME':'lcc', #資料庫名稱
+        'USER':'root', #使用者名
+        'PASSWORD':'123456789', 
+        'HOST':'localhost',
+        'PORT':'3306' #預設
+    }
+
+2 setting裡新增
+  import pymysql
+  pymysql.install_as_MySQLdb()
+
+3.開啟cmd mysmql -h localhost (本地端可省略-h localhost) -u root -p
+
+4.輸入密碼 123456789 , 進入mysql
+
+5.(cmd裡)
+  create database lcc; #創建資料庫
+  show databases;      #看內容
+
+6.python manage.py makemigrations  #確認有無文件更改
+  python manage.py migrate  #在lcc中建立資料表
+
+7.python manage.py createsuperuser #建立超級使用者 (管理) 
+
+8.登入 admin 

@@ -1,0 +1,11 @@
+<html>
+    <head></head>
+    <body>
+        
+        {%for row in bike %}
+            <p>{{row.StationName}}</p>
+            <p>{{row.AvaliableBikeCount}}</p>
+            <p>{{row.AvaliableSpaceCount}}</p>
+        {% endfor %}
+    </body>
+</html>

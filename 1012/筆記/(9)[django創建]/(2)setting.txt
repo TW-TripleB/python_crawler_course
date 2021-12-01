@@ -1,0 +1,23 @@
+1. import os 
+
+2. ALLOWED_HOSTS = ['*']  []新增'*' 代表所以使用者皆可用
+
+3. ($107)LANGUAGE_CODE = 'en-us' 改成 zh-Hant (更改語言編碼)
+
+4. ($109)TIME_ZONE = 'UTC' 改成 Asia/Taipei (更改時區)
+
+5. 在mysite下 建立 資料夾static來存放各種資源(css,js,image)
+
+6. 同樣在mysite下 建立 資料夾 templates 存放網頁 
+
+7. ($55)TEMPLATES 裡的 DIR:[] 串列內新增 os.path.jion (BASE_DIR,'templates').replace('\\','/')
+
+8. ($122) STATIC_ROOT = os.path.join(BASE_DIR,'static') (導入路徑)
+
+9. ($123) STATICFILES_DIRS = (
+                    ('images',os.path.join(BASE_DIR,'images').replace('\\','/')),
+                    ('css',os.path.join(BASE_DIR,'css').replace('\\','/')),
+                    ('js',os.path.join(BASE_DIR,'js').replace('\\','/'))
+                    )  #規劃好資料的存放
+
+10. python manage.py startapp shop (執行app 名稱:shop) 在mysite裡會建立資料夾

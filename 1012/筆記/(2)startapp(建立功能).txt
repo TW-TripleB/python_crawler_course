@@ -1,0 +1,33 @@
+###建立功能###
+
+1. prompt > python manage.py startapp product #建立新功能
+
+2.setting > INSTALLED_APPS ($35) 內新增 'shop', 'product'
+
+3.urls.py 裡 from prodcut.view import product
+  urlpatterns裡 新增 path('priduct/', product)
+
+4.將 product 裡的 admin, model ,views 拉進編輯器
+
+5.model(欄位編輯)  #product.models
+    class Product(models.Model):
+    	shop = models.CharField(max_length=15) #最大長度為15
+    	name = models.CharField(max_length=100) #最大長度100
+    	price = models.IntegerField()  #整數為intergerfield
+    	photo_url = models.CharField(max_length=200)
+    	link = models.CharField(max_length=200) 
+    	mount = models.IntegerField()
+    	create_date = models.DateField()
+    	product_type = models.IntegerField()
+
+    	class Meta:
+	    db_table='product' #創建資料表
+
+6.admin(註冊資料表) #product.models
+  from .models import Product
+  admin.site.register(Product)
+
+7. views #views.models
+   (暫)
+   def product(request):
+     pass

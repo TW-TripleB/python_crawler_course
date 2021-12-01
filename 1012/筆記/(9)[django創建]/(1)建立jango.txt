@@ -1,0 +1,22 @@
+只能在prompt安裝
+
+1. pip3 install virtualenvwrapper-win (安裝虛擬環境)
+
+2. mkvirtualenv myweb (建立虛擬環境 myweb為環境名稱 )
+
+###(如跳出虛擬環境) 輸入workon 可看到虛擬環境列表 workon myweb(打環境名字,可直接進去)  deactivate(退出)###
+
+3. 在虛擬環境裡安裝django  pip3 install django
+
+4. mkdir web (建立資料夾web)
+
+5. cd web (切換至web資料夾下)   #cd..(退回上一層資料夾)
+
+6. django-admin startproject mysite(透過django建立專案mysite)
+
+7. cd mysite(進入mysite) 
+
+8. python manage.py runserver 0.0.0.0:8080 打開網站
+
+9. 把資料夾內的setting拉進 spyder 編輯
+
